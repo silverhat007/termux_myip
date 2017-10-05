@@ -1,0 +1,42 @@
+#!/data/data/com.termux/files/usr/bin/bash
+clear
+
+echo ""
+echo -e "\033[34m  ███ ███  ██    ██ ██ ██████ \033[0m"
+echo -e "\033[34m ██ ███ ██  ██  ██  ██ ██  ██ \033[0m"
+echo -e "\033[34m ██  █  ██    ██    ██ ██████ \033[0m"
+echo -e "\033[34m ██     ██    ██    ██ ██ \033[0m"
+echo -e "\033[34m ██     ██    ██    ██ ██ \033[0m"
+
+
+echo ""
+echo " [1] IP PUBLIC "
+echo " [2] IP LOCAL WIFI "
+echo " [3] IP LOCAL DATA "
+echo " [4] EXIT "
+echo ""
+read -p " INPUT YOUR CHOISE [1-4] : " a
+if [ $a -eq 1 ];
+then
+echo ""
+echo "[+] This My Ip Public"
+shodan myip
+
+elif [ $a -eq 2 ];
+then
+echo ""
+ifconfig wlan0
+
+elif [ $a -eq 3 ];
+then
+echo ""
+ifconfig seth_w0
+
+elif [ $a -eq 4 ];
+then
+exit
+else
+
+echo " [!] Wrong Command! "
+fi
+
